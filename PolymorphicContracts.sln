@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicContracts", "PolymorphicContracts\PolymorphicContracts.csproj", "{7BF17D35-CAD7-4CDC-84F4-46085B2AE788}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicContractsConsumer", "PolymorphicContractsConsumer\PolymorphicContractsConsumer.csproj", "{275DD17C-AC62-427C-B74B-2AC1BB303ABF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicContracts.Models", "PolymorphicContracts.Models\PolymorphicContracts.Models.csproj", "{D6D3C74E-8D70-4337-A5AA-5F703C13CDDE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicContracts.Validators", "PolymorphicContracts.Validators\PolymorphicContracts.Validators.csproj", "{46174C8D-5486-4039-8C95-ED24AE002F47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BF17D35-CAD7-4CDC-84F4-46085B2AE788}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BF17D35-CAD7-4CDC-84F4-46085B2AE788}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BF17D35-CAD7-4CDC-84F4-46085B2AE788}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BF17D35-CAD7-4CDC-84F4-46085B2AE788}.Release|Any CPU.Build.0 = Release|Any CPU
+		{275DD17C-AC62-427C-B74B-2AC1BB303ABF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275DD17C-AC62-427C-B74B-2AC1BB303ABF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275DD17C-AC62-427C-B74B-2AC1BB303ABF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275DD17C-AC62-427C-B74B-2AC1BB303ABF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6D3C74E-8D70-4337-A5AA-5F703C13CDDE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6D3C74E-8D70-4337-A5AA-5F703C13CDDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6D3C74E-8D70-4337-A5AA-5F703C13CDDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6D3C74E-8D70-4337-A5AA-5F703C13CDDE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46174C8D-5486-4039-8C95-ED24AE002F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46174C8D-5486-4039-8C95-ED24AE002F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46174C8D-5486-4039-8C95-ED24AE002F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46174C8D-5486-4039-8C95-ED24AE002F47}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

@@ -1,5 +1,6 @@
 using Microsoft.OpenApi.Models;
 using PolymorphicContracts.TypeDiscriminatorSwaggerSetup.Hierarchies;
+using PolymorphicContracts.TypeDiscriminatorSwaggerSetup.Hierarchies.Models;
 using Swashbuckle.AspNetCore.SwaggerGen;
 
 namespace PolymorphicContracts.TypeDiscriminatorSwaggerSetup;
@@ -21,9 +22,17 @@ public class TypeDiscriminatorSchemaFilter : ISchemaFilter
         if (!_jsonHierarchiesRepository.TryGetHierarchy(type.IsAbstract ? type : type.BaseType!, out var hierarchy))
             return;
 
-        var info = type.IsAbstract
-            ? hierarchy.DerivedTypes.First().Value
-            : hierarchy.DerivedTypes[type];
+        DerivedTypeInfo info;
+        try
+        {
+            info = type.IsAbstract
+                ? hierarchy.DerivedTypes.First().Value
+                : hierarchy.DerivedTypes[type];
+        }
+        catch (KeyNotFoundException)
+        {
+            return;
+        }
 
         schema.Required.Add(discriminator);
         schema.Properties.Add(discriminator, new OpenApiSchema

@@ -13,9 +13,8 @@ public class AnimalsController : Controller
         new List<Animal> {new Dog(), new Cat()};
 
     [HttpPost]
-    public void PostAnimal([FromBody] Animal animal, [FromServices] ILoggerFactory factory) =>
-        factory.CreateLogger(GetType())
-            .LogInformation("{Animal}", animal.ToString());
+    public void PostAnimal([FromBody] Animal animal, [FromServices] ILogger<AnimalsController> logger) =>
+        logger.LogInformation("{Animal}", animal.ToString());
 }
 
 [ApiController]

@@ -7,16 +7,14 @@ using PolymorphicContracts.TypeDiscriminatorSwaggerSetup;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers().AddJsonOptions(options =>
-{
-    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
-});
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+    options.JsonSerializerOptions.Converters
+        .Add(new JsonStringEnumConverter())
+);
+builder.Services.AddEndpointsApiExplorer().AddSwaggerGen()
+    .AddTypeDiscriminatorToSwagger(builder.Configuration);
 
-builder.AddTypeDiscriminatorToSwagger();
-
-builder.Services.AddFluentValidationAutoValidation();
-builder.Services.AddValidatorsFromAssembly(Assembly.Load("PolymorphicContracts.Validators"));
+builder.Services.AddFluentValidationAutoValidation()
+    .AddValidatorsFromAssembly(Assembly.Load("PolymorphicContracts.Validators"));
 
 var app = builder.Build();
 

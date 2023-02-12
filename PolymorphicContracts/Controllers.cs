@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using PolymorphicContracts.Models.Models.Animals;
-using PolymorphicContracts.Models.Models.Fruits;
+using PolymorphicContracts.Models.Animals;
+using PolymorphicContracts.Models.Fruits;
 
 namespace PolymorphicContracts;
 

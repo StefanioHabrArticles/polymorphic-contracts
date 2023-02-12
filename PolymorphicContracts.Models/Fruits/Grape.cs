@@ -1,4 +1,4 @@
-namespace PolymorphicContracts.Models.Models.Fruits;
+namespace PolymorphicContracts.Models.Fruits;
 
 public record Grape : Fruit
 {

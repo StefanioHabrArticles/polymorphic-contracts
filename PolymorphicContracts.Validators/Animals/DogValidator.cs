@@ -1,7 +1,7 @@
 using FluentValidation;
-using PolymorphicContracts.Models.Models.Animals;
+using PolymorphicContracts.Models.Animals;
 
-namespace PolymorphicContracts.Validators.Validators.Animals;
+namespace PolymorphicContracts.Validators.Animals;
 
 public class DogValidator : AbstractValidator<Dog>
 {

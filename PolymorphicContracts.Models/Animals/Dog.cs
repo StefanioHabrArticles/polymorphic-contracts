@@ -1,4 +1,4 @@
-namespace PolymorphicContracts.Models.Models.Animals;
+namespace PolymorphicContracts.Models.Animals;
 
 public record Dog : Animal
 {

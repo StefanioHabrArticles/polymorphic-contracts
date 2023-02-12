@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace PolymorphicContracts.Models.Models.Fruits;
+namespace PolymorphicContracts.Models.Fruits;
 
 [JsonDerivedType(typeof(Apple), 0)]
 [JsonDerivedType(typeof(Citrus), 1)]

@@ -1,4 +1,4 @@
-using PolymorphicContracts.Models.Models.Fruits;
+using PolymorphicContracts.Models.Fruits;
 using Refit;
 
 namespace PolymorphicContractsConsumer;

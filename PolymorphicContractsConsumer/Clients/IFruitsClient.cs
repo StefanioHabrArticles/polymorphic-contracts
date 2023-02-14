@@ -1,10 +1,10 @@
 using PolymorphicContracts.Models.Fruits;
 using Refit;
 
-namespace PolymorphicContractsConsumer;
+namespace PolymorphicContractsConsumer.Clients;
 
 public interface IFruitsClient
 {
-    [Get("/fruits")]
+    [Get("")]
     public Task<IEnumerable<Fruit>> GetAllFruits();
 }

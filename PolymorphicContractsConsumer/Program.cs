@@ -1,9 +1,23 @@
 ﻿using PolymorphicContractsConsumer;
+using PolymorphicContractsConsumer.Clients;
 using Refit;
 
-var fruitsClient = RestService.For<IFruitsClient>("http://localhost:5206");
+const string host = "http://localhost:5206";
+
+var refitSettings = new RefitSettings
+{
+    ContentSerializer = new PolymorphicSerializer(
+        new SystemTextJsonContentSerializer(),
+        SystemTextJsonContentSerializer.GetDefaultJsonSerializerOptions()
+    )
+};
+
+var fruitsClient = RestService.For<IFruitsClient>($"{host}/fruits", refitSettings);
 var fruits = await fruitsClient.GetAllFruits();
 foreach (var fruit in fruits)
-{
     Console.WriteLine(fruit);
-}
+
+var animalsClient = RestService.For<IAnimalsClient>($"{host}/animals", refitSettings);
+var animals = await animalsClient.GetAllAnimals();
+foreach (var animal in animals)
+    await animalsClient.SendAnimal(animal);

@@ -15,6 +15,9 @@ public record IntegerDiscriminator(int IntValue) : IDiscriminator
 
     public IOpenApiAny Value =>
         new OpenApiInteger(IntValue);
+
+    public override string ToString() =>
+        IntValue.ToString();
 }
 
 public record StringDiscriminator(string StrValue) : IDiscriminator
@@ -23,6 +26,9 @@ public record StringDiscriminator(string StrValue) : IDiscriminator
 
     public IOpenApiAny Value =>
         new OpenApiString(StrValue);
+    
+    public override string ToString() =>
+        StrValue;
 }
 
 public static class ObjectExtensions

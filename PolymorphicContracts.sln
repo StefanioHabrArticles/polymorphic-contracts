@@ -8,8 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicContracts.Models
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicContracts.Validators", "PolymorphicContracts.Validators\PolymorphicContracts.Validators.csproj", "{46174C8D-5486-4039-8C95-ED24AE002F47}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PolymorphicContracts.TypeDiscriminatorSwaggerSetup", "PolymorphicContracts.TypeDiscriminatorSwaggerSetup\PolymorphicContracts.TypeDiscriminatorSwaggerSetup.csproj", "{A9352630-F359-4569-96B8-455F87543F02}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -32,9 +30,5 @@ Global
 		{46174C8D-5486-4039-8C95-ED24AE002F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46174C8D-5486-4039-8C95-ED24AE002F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46174C8D-5486-4039-8C95-ED24AE002F47}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9352630-F359-4569-96B8-455F87543F02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9352630-F359-4569-96B8-455F87543F02}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9352630-F359-4569-96B8-455F87543F02}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9352630-F359-4569-96B8-455F87543F02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

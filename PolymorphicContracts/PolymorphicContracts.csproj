@@ -10,11 +10,11 @@
         <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
         <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+        <PackageReference Include="PolymorphicContracts.TypeDiscriminatorSwaggerSetup" Version="1.0.0" />
     </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\PolymorphicContracts.Models\PolymorphicContracts.Models.csproj" />
-      <ProjectReference Include="..\PolymorphicContracts.TypeDiscriminatorSwaggerSetup\PolymorphicContracts.TypeDiscriminatorSwaggerSetup.csproj" />
       <ProjectReference Include="..\PolymorphicContracts.Validators\PolymorphicContracts.Validators.csproj" />
     </ItemGroup>
 

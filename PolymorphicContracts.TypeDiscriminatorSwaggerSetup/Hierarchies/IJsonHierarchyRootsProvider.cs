@@ -11,7 +11,7 @@ public interface IJsonHierarchyRootsProvider
     IEnumerable<JsonHierarchyRoot> GetAllRoots();
 }
 
-public class JsonHierarchyRootsProvider : IJsonHierarchyRootsProvider
+internal class JsonHierarchyRootsProvider : IJsonHierarchyRootsProvider
 {
     private readonly List<string> _assemblies;
 

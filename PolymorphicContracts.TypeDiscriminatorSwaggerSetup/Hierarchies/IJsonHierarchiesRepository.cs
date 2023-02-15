@@ -7,7 +7,7 @@ public interface IJsonHierarchiesRepository
     bool TryGetHierarchy(Type baseType, out JsonHierarchy jsonHierarchy);
 }
 
-public class JsonHierarchiesRepository : IJsonHierarchiesRepository
+internal class JsonHierarchiesRepository : IJsonHierarchiesRepository
 {
     private readonly Dictionary<Type, JsonHierarchy> _hierarchies;
 

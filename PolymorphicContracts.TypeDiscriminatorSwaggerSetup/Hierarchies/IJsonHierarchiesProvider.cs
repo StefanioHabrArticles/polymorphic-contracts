@@ -1,4 +1,5 @@
 using PolymorphicContracts.TypeDiscriminatorSwaggerSetup.Hierarchies.Models;
+using PolymorphicContracts.TypeDiscriminatorSwaggerSetup.Hierarchies.Models.Discriminators;
 
 namespace PolymorphicContracts.TypeDiscriminatorSwaggerSetup.Hierarchies;
 
@@ -7,7 +8,7 @@ public interface IJsonHierarchiesProvider
     IEnumerable<JsonHierarchy> GetAllHierarchies();
 }
 
-public class JsonHierarchiesProvider : IJsonHierarchiesProvider
+internal class JsonHierarchiesProvider : IJsonHierarchiesProvider
 {
     private readonly IJsonHierarchyRootsProvider _rootsProvider;
 

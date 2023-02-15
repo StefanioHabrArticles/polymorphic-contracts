@@ -1,3 +1,5 @@
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using PolymorphicContracts.TypeDiscriminatorSwaggerSetup.Hierarchies;
 using PolymorphicContracts.TypeDiscriminatorSwaggerSetup.Hierarchies.Options;
 

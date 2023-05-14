@@ -38,7 +38,7 @@ public class SystemVsNewtonsoft
     {
         var fixture = new Fixture();
         fixture.Customizations.Add(
-            new FilteringSpecimenBuilder(
+            item: new FilteringSpecimenBuilder(
                 new RandomRelayCustomization(builders:
                     new ISpecimenBuilder[]
                     {
@@ -86,5 +86,4 @@ public class SystemVsNewtonsoft
     [Benchmark]
     public List<Fruit> DeserializeListNewtonsoft() =>
         JsonConvert.DeserializeObject<List<Fruit>>(SerializeListNewtonsoft(), _newtonsoftSettings)!;
-
 }

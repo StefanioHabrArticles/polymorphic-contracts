@@ -16,6 +16,10 @@ builder.Services.AddEndpointsApiExplorer().AddSwaggerGen()
 builder.Services.AddFluentValidationAutoValidation()
     .AddValidatorsFromAssembly(Assembly.Load("PolymorphicContracts.Validators"));
 
+builder.Services.AddMediatR(cfg =>
+    cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly())
+);
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

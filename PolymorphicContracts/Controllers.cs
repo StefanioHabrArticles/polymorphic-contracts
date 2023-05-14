@@ -1,4 +1,6 @@
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using PolymorphicContracts.Handlers.CreateFruit;
 using PolymorphicContracts.Models.Animals;
 using PolymorphicContracts.Models.Fruits;
 
@@ -10,7 +12,7 @@ public class AnimalsController : Controller
 {
     [HttpGet]
     public IEnumerable<Animal> GetAnimals() =>
-        new List<Animal> {new Dog(), new Cat()};
+        new List<Animal> { new Dog(), new Cat() };
 
     [HttpPost]
     public void PostAnimal([FromBody] Animal animal, [FromServices] ILogger<AnimalsController> logger) =>
@@ -23,5 +25,11 @@ public class FruitsController : Controller
 {
     [HttpGet]
     public IEnumerable<Fruit> GetFruits() =>
-        new List<Fruit> {new Apple(), new Citrus(), new Grape()};
+        new List<Fruit> { new Apple(), new Citrus(), new Grape() };
+
+    [HttpPost]
+    public Task<Fruit> CreateFruit([FromBody] CreateFruitRequest request,
+        [FromServices] IMediator mediator,
+        CancellationToken ctn) =>
+        mediator.Send(request);
 }

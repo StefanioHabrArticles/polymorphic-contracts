@@ -15,7 +15,8 @@ public class AnimalsController : Controller
         new List<Animal> { new Dog(), new Cat() };
 
     [HttpPost]
-    public void PostAnimal([FromBody] Animal animal, [FromServices] ILogger<AnimalsController> logger) =>
+    public void PostAnimal([FromBody] Animal animal,
+        ILogger<AnimalsController> logger) =>
         logger.LogInformation("{Animal}", animal.ToString());
 }
 
@@ -29,7 +30,7 @@ public class FruitsController : Controller
 
     [HttpPost]
     public Task<Fruit> CreateFruit([FromBody] CreateFruitRequest request,
-        [FromServices] IMediator mediator,
+        IMediator mediator,
         CancellationToken ctn) =>
         mediator.Send(request, ctn);
 }

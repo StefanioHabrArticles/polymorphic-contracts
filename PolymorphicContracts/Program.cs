@@ -2,6 +2,7 @@ using System.Reflection;
 using System.Text.Json.Serialization;
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using PolymorphicContracts.MappingProfiles;
 using PolymorphicContracts.TypeDiscriminatorSwaggerSetup;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,8 @@ builder.Services.AddFluentValidationAutoValidation()
 builder.Services.AddMediatR(cfg =>
     cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly())
 );
+
+builder.Services.AddAutoMapper(typeof(FruitMappingProfile));
 
 var app = builder.Build();
 

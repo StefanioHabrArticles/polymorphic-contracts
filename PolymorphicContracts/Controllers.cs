@@ -1,3 +1,4 @@
+using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using PolymorphicContracts.Handlers.CreateFruit;
@@ -28,9 +29,12 @@ public class FruitsController : Controller
     public IEnumerable<Fruit> GetFruits() =>
         new List<Fruit> { new Apple(), new Citrus(), new Grape() };
 
-    [HttpPost]
+    [HttpPost("v1")]
     public Task<Fruit> CreateFruit([FromBody] CreateFruitRequest request,
         IMediator mediator,
-        CancellationToken ctn) =>
-        mediator.Send(request, ctn);
+        CancellationToken ctn) => mediator.Send(request, ctn);
+
+    [HttpPost("v2")]
+    public Fruit CreateFruit([FromBody] CreateFruitRequest request,
+        IMapper mapper) => mapper.Map<CreateFruitRequest, Fruit>(request);
 }

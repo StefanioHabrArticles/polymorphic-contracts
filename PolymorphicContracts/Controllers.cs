@@ -31,5 +31,5 @@ public class FruitsController : Controller
     public Task<Fruit> CreateFruit([FromBody] CreateFruitRequest request,
         [FromServices] IMediator mediator,
         CancellationToken ctn) =>
-        mediator.Send(request);
+        mediator.Send(request, ctn);
 }

@@ -1,5 +1,3 @@
-using System.Text.Json.Serialization;
-
 namespace PolymorphicContracts.Models.Fruits;
 
 [JsonDerivedType(typeof(Apple), typeDiscriminator: 0)]

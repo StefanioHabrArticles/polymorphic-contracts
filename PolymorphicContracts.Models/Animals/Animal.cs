@@ -1,5 +1,3 @@
-using System.Text.Json.Serialization;
-
 namespace PolymorphicContracts.Models.Animals;
 
 [JsonDerivedType(typeof(Cat), typeDiscriminator: nameof(Cat))]

@@ -2,11 +2,11 @@ using System.Diagnostics.CodeAnalysis;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using AutoFixture;
-using AutoFixture.Kernel;
 using BenchmarkDotNet.Attributes;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Serialization;
+using PolymorphicContracts.AutoFixture;
 using PolymorphicContracts.Models.Fruits;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
@@ -37,19 +37,11 @@ public class SystemVsNewtonsoft
     public SystemVsNewtonsoft()
     {
         var fixture = new Fixture();
-        fixture.Customizations.Add(
-            item: new FilteringSpecimenBuilder(
-                new RandomRelayCustomization(builders:
-                    new ISpecimenBuilder[]
-                    {
-                        new TypeRelay(typeof(Fruit), typeof(Apple)),
-                        new TypeRelay(typeof(Fruit), typeof(Citrus)),
-                        new TypeRelay(typeof(Fruit), typeof(Grape))
-                    }
-                ),
-                new ExactTypeSpecification(typeof(Fruit))
-            )
-        );
+        fixture.CustomizePolymorphism<Fruit>()
+            .WithDerivedType<Apple>()
+            .WithDerivedType<Citrus>()
+            .WithDerivedType<Grape>()
+            .BuildCustomization();
 
         _fruits = fixture.CreateMany<Fruit>(30000).ToList();
         _fruit = fixture.Create<Fruit>();

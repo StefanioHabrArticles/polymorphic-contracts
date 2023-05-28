@@ -12,9 +12,11 @@ internal class PolymorphicSerializer : IHttpContentSerializer
 
     public PolymorphicSerializer(
         IHttpContentSerializer defaultSerializer,
-        JsonSerializerOptions serializerOptions) =>
-        (_defaultSerializer, _serializerOptions) =
-        (defaultSerializer, serializerOptions);
+        JsonSerializerOptions serializerOptions)
+    {
+        _defaultSerializer = defaultSerializer;
+        _serializerOptions = serializerOptions;
+    }
 
     public HttpContent ToHttpContent<T>(T item) =>
         JsonContent.Create(item, item!.GetType().BaseType!, options: _serializerOptions);

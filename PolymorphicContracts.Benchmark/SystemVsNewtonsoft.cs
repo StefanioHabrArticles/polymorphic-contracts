@@ -37,7 +37,7 @@ public class SystemVsNewtonsoft
     public SystemVsNewtonsoft()
     {
         var fixture = new Fixture();
-        fixture.CustomizePolymorphism<Fruit>()
+        fixture.CustomizePolymorphismFor<Fruit>()
             .WithDerivedType<Apple>()
             .WithDerivedType<Citrus>()
             .WithDerivedType<Grape>()

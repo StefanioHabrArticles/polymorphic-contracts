@@ -1,5 +1,5 @@
 using PolymorphicContracts.Models.Animals;
-using Refit;
+using RestEase;
 
 namespace PolymorphicContractsConsumer.Clients;
 
